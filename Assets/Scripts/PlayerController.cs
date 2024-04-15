@@ -14,13 +14,15 @@ public class PlayerController : MonoBehaviour
 
 
     private void Awake() {
-        playerControls = new PlayerControls();
+
+        playerControls = new PlayerControls(); // input actions
         rb = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
-        mySpriteRender = GetComponent<SpriteRenderer>();
+        myAnimator = GetComponent<Animator>(); // animação do personagem
+        mySpriteRender = GetComponent<SpriteRenderer>(); // renderiza o sprite do personagem
     }
 
     private void OnEnable() {
+        // "This function is called when the object becomes enabled and active."
         playerControls.Enable();
     }
 
