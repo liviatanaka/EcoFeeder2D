@@ -34,4 +34,8 @@ public class ActiveInventory : MonoBehaviour
 
         this.transform.GetChild(indexNum).GetChild(0).gameObject.SetActive(true);
     }
+
+    private void ChangeActiveWeapon(){
+        
+    }
 }
