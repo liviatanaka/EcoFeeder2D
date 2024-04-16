@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private float moveSpeed = 1f;
 
@@ -10,15 +10,19 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     private Animator myAnimator;
+    private Knockback knockback;
     private SpriteRenderer mySpriteRender;
 
 
     private void Awake() {
+        base.Awake();
 
         playerControls = new PlayerControls(); // input actions
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>(); // animação do personagem
         mySpriteRender = GetComponent<SpriteRenderer>(); // renderiza o sprite do personagem
+        knockback = GetComponent<Knockback>();
+
     }
 
     private void OnEnable() {
@@ -45,6 +49,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
+        if (knockback.GettingKnockedBack) { return; }
+
         // atualiza a posição do usuário
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
