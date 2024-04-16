@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc574bee2b4b4bf42952cb3bd3459a01, type: 3}
-  m_Name: Corn
+  m_Name: Maca
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8557680821323529894, guid: 86d400162d35ee941800b5ae5e6db6a7, type: 3}
-  weaponCooldown: 1.2
+  weaponPrefab: {fileID: 3655946211112973392, guid: ff9b7d22a0a32124f970ff900c71e6c9, type: 3}
+  weaponCooldown: 1

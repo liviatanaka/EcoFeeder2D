@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc574bee2b4b4bf42952cb3bd3459a01, type: 3}
-  m_Name: Fish
+  m_Name: Milho
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  weaponCooldown: 0
+  weaponPrefab: {fileID: 3047329864648536965, guid: 6e163bedc04966f42961ab48459997b0, type: 3}
+  weaponCooldown: 1
