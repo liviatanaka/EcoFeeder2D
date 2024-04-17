@@ -13,7 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     private Knockback knockback;
     private SpriteRenderer mySpriteRender;
 
-
+   
     private void Awake() {
         base.Awake();
 

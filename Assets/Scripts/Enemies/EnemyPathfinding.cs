@@ -16,6 +16,11 @@ public class EnemyPathfinding : MonoBehaviour
     private void FixedUpdate() {
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
+     private void onEnterTrigger2D(Collider2D other) {
+        if (other.gameObject.CompareTag("milho")) {
+            Destroy(gameObject);
+        }
+    }
 
     public void MoveTo(Vector2 targetPosition) {
         moveDir = targetPosition;

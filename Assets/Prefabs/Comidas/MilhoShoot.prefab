@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4203084345909822412}
   - component: {fileID: 5039883548757116096}
   - component: {fileID: 5337241078408345025}
+  - component: {fileID: 8403026047653177915}
   m_Layer: 0
   m_Name: MilhoShoot
   m_TagString: Untagged
@@ -288,4 +289,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5385c3cbd93206d46862417d7788ec88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 22
+  moveSpeed: 18
+--- !u!114 &8403026047653177915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047291471952666939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd721f07f605bb540be92f5c86c942a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 18
+  weaponInfo: {fileID: 0}
+  arrowPrefab: {fileID: 0}
+  arrowSpawnPoint: {fileID: 0}

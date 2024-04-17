@@ -17,6 +17,8 @@ public class Maca : MonoBehaviour, IWeapon
     {
         // myAnimator = GetComponent<Animator>();
     }
+    
+   
 
     public void Attack()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 22f;
+    [SerializeField] private float moveSpeed = 18f;
 
     private void Update()
     {
@@ -15,4 +15,7 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
     }
+
+  
+
 }

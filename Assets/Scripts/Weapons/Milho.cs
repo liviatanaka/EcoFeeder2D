@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Milho : MonoBehaviour, IWeapon
+public class Milho : Projectile, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform arrowSpawnPoint;
-
+    
     readonly int FIRE_HASH = Animator.StringToHash("Fire");
 
     // private Animator myAnimator;
@@ -17,6 +17,17 @@ public class Milho : MonoBehaviour, IWeapon
     {
         // myAnimator = GetComponent<Animator>();
     }
+   
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "galinha")
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+    }
+
+   
 
     public void Attack()
     {
@@ -43,4 +54,6 @@ public class Milho : MonoBehaviour, IWeapon
     {
         return weaponInfo;
     }
+
+    
 }

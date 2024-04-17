@@ -17,7 +17,6 @@ public class EnemyAI : MonoBehaviour
         enemyPathfinding = GetComponent<EnemyPathfinding>();
         state = State.Roaming;
     }
-
     private void Start() {
         StartCoroutine(RoamingRoutine());
     }

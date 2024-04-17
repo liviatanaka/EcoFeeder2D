@@ -51,7 +51,7 @@ public class Pickup : MonoBehaviour
         {
             case PickUpType.HealthGlobe:
                 PlayerHealth.Instance.HealPlayer();
-                Debug.Log("HealthGlobe");
+                
                 break;
         }
     }
