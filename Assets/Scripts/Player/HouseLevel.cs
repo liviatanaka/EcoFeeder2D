@@ -1,32 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Importar o namespace para gerenciamento de cenas
+using UnityEngine.SceneManagement;
+
+
 
 public class HouseLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int sceneIndex;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger entered by: " + other.gameObject.name);  // Para debug, mostrar quem entrou no trigger
-
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player has entered, loading scene...");  // Confirmação de que o jogador entrou
-            SceneManager.LoadScene(0);
+            MarkLevelComplete(sceneIndex);
+            SceneManager.LoadScene(sceneIndex);
         }
     }
 
+    void MarkLevelComplete(int level)
+    {
+        PlayerPrefs.SetInt("Level" + level + "Complete", 1);
+        PlayerPrefs.Save();
+    }
 }
