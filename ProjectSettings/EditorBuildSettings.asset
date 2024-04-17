@@ -11,6 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cenaFases.unity
     guid: 0a724ac9bb8bac24498aec4003465722
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4295233c98740084288ee294d409eab1
   - enabled: 1
