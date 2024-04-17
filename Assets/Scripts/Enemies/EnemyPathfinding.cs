@@ -15,6 +15,8 @@ public class EnemyPathfinding : MonoBehaviour
 
     private void FixedUpdate() {
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
+        // fix z rotation to 0
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void MoveTo(Vector2 targetPosition) {
