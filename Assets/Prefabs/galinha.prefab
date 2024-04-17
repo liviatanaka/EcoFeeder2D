@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 2580366308322753562}
   - component: {fileID: 640750042406918463}
   - component: {fileID: 5417763157567897920}
+  - component: {fileID: 6509204719014100636}
+  - component: {fileID: 4406805809388662066}
+  - component: {fileID: 1563183807901413346}
   m_Layer: 0
   m_Name: galinha
   m_TagString: Untagged
@@ -235,3 +238,46 @@ NavMeshAgent:
   m_BaseOffset: 0.17
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6509204719014100636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863447148836006375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebed2030b3805f42bd6c7780b7bea3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
+--- !u!114 &4406805809388662066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863447148836006375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e9427aa5937c54b97c3101e18b4b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: 76964a66dd24d674698913b31984b443, type: 2}
+  restoreDefaultMatTime: 0.2
+--- !u!114 &1563183807901413346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863447148836006375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718ab4aae8f63bf4d84fa8cb2d868252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  knockBackThrustAmount: 10
+  damageRecoveryTime: 1
+  specialAlimentTag: Milho

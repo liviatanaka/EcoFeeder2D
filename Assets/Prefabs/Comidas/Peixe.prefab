@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5949336087971308454}
-  - component: {fileID: 5643541257208612222}
+  - component: {fileID: 3991856994226881156}
   m_Layer: 0
   m_Name: Peixe
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5643541257208612222
+--- !u!114 &3991856994226881156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7687959512704245907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18209f10a4afdd348aaa4b97028bd902, type: 3}
+  m_Script: {fileID: 11500000, guid: ab56dd590a828834d99415442a363635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponInfo: {fileID: 11400000, guid: e329dd9ae86834d4cadfbfd9cb005dce, type: 2}
-  arrowPrefab: {fileID: 6047291471952666939, guid: 4df1e03d5f5170a45aaaf1c2724901f6, type: 3}
-  arrowSpawnPoint: {fileID: 0}
+  alimentoPrefab: {fileID: 6047291471952666939, guid: 4df1e03d5f5170a45aaaf1c2724901f6, type: 3}

@@ -3,20 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Beterraba : MonoBehaviour, IWeapon
+public class Alimento : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
-    [SerializeField] private GameObject arrowPrefab;
-    [SerializeField] private Transform arrowSpawnPoint;
+    [SerializeField] private GameObject alimentoPrefab;
 
     readonly int FIRE_HASH = Animator.StringToHash("Fire");
-
-    // private Animator myAnimator;
-
-    private void Awake()
-    {
-        // myAnimator = GetComponent<Animator>();
-    }
 
     public void Attack()
     {
@@ -32,11 +24,11 @@ public class Beterraba : MonoBehaviour, IWeapon
     Vector3 direction = (worldMousePosition - playerTransform.position).normalized;
 
     // Cria a flecha na posição do jogador
-    GameObject newArrow = Instantiate(arrowPrefab, playerTransform.position, Quaternion.identity);
+    GameObject newAlimento = Instantiate(alimentoPrefab, playerTransform.position, Quaternion.identity);
 
     // Ajusta a rotação da flecha para apontar na direção do mouse
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    newArrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    newAlimento.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     public WeaponInfo GetWeaponInfo()

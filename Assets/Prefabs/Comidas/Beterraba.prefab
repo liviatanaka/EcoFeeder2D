@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2313216691930199267}
-  - component: {fileID: 5930782416761577716}
+  - component: {fileID: -2805232864020199224}
   m_Layer: 0
   m_Name: Beterraba
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5930782416761577716
+--- !u!114 &-2805232864020199224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8123716756449274488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7afb5493f9b2ab4e89a7e803b322877, type: 3}
+  m_Script: {fileID: 11500000, guid: ab56dd590a828834d99415442a363635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponInfo: {fileID: 11400000, guid: 3eeed7c0a3c159b49be3ea37528f1dfc, type: 2}
-  arrowPrefab: {fileID: 6047291471952666939, guid: 27e015c7496d8824c981f5ab48db04ff, type: 3}
-  arrowSpawnPoint: {fileID: 0}
+  alimentoPrefab: {fileID: 6047291471952666939, guid: 27e015c7496d8824c981f5ab48db04ff, type: 3}
