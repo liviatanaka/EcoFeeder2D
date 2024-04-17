@@ -26,6 +26,7 @@ public class Alimento : MonoBehaviour, IWeapon
     // Cria a flecha na posição do jogador
     GameObject newAlimento = Instantiate(alimentoPrefab, playerTransform.position, Quaternion.identity);
 
+    Destroy(newAlimento, 2f);
     // Ajusta a rotação da flecha para apontar na direção do mouse
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     newAlimento.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
