@@ -24,4 +24,6 @@ public class Flash : MonoBehaviour
         yield return new WaitForSeconds(restoreDefaultMatTime);
         spriteRenderer.material = defaultMat;
     }
+
+
 }

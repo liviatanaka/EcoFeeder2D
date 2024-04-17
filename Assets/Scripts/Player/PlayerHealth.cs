@@ -9,6 +9,10 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
+    [SerializeField] private Material redFlashMat;
+    private SpriteRenderer spriteRenderer;
+
+
     private Slider healthSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
@@ -17,6 +21,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     protected override void Awake() {
         base.Awake();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
@@ -59,8 +64,25 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void CheckIfPlayerDeath() {
         if (currentHealth <= 0) {
             currentHealth = 0;
+            canTakeDamage = false;
+            spriteRenderer.material = redFlashMat;
+            StartCoroutine(DeathRoutine());
+
             Debug.Log("Player Death");
         }
+    }
+
+    private IEnumerator DeathRoutine() {
+
+        spriteRenderer.material = redFlashMat;
+        yield return new WaitForSeconds(.3f);
+        spriteRenderer.material = redFlashMat;
+        yield return new WaitForSeconds(.3f);
+        spriteRenderer.material = redFlashMat;
+        yield return new WaitForSeconds(.3f);
+        // disable player
+        gameObject.SetActive(false);
+
     }
 
     private IEnumerator DamageRecoveryRoutine() {
