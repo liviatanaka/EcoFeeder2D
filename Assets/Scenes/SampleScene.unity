@@ -3168,6 +3168,7 @@ MonoBehaviour:
   maxHealth: 3
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+  redFlashMat: {fileID: 2100000, guid: 3ac084c2756fbee4ba72e5901e3a4f1e, type: 2}
 --- !u!1 &1521905304
 GameObject:
   m_ObjectHideFlags: 0
