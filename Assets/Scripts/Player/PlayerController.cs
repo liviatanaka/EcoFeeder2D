@@ -16,7 +16,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Awake() {
         base.Awake();
-
+        // set initial position
+        transform.position = new Vector3(0, 0, 0);
         playerControls = new PlayerControls(); // input actions
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>(); // animação do personagem
@@ -25,8 +26,20 @@ public class PlayerController : Singleton<PlayerController>
 
     }
 
+    
+    private void Start(){
+        // start the script with the player in the center of the screen
+
+        transform.position = new Vector3(0, 0, 0);
+
+        playerControls.Enable();
+
+    }
+
     private void OnEnable() {
         // "This function is called when the object becomes enabled and active."
+        transform.position = new Vector3(0, 0, 0);
+
         playerControls.Enable();
     }
 
