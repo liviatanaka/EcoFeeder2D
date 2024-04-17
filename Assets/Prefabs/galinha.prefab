@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4222116075056190116}
   - component: {fileID: 6622454324385518294}
   - component: {fileID: 2580366308322753562}
-  - component: {fileID: 640750042406918463}
   - component: {fileID: 5417763157567897920}
   - component: {fileID: 6509204719014100636}
   - component: {fileID: 4406805809388662066}
@@ -168,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56757a7375de5004dbae7e058f530f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!114 &6622454324385518294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1191c967cced7d844a595990c489deed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roamChangeDirFloat: 2
+  roamChangeDirFloat: 4
+  agent: {fileID: 5417763157567897920}
 --- !u!95 &2580366308322753562
 Animator:
   serializedVersion: 5
@@ -203,19 +203,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &640750042406918463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863447148836006375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed016983270b8d49964ee21da8d5081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 5417763157567897920}
 --- !u!195 &5417763157567897920
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -226,7 +213,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.16
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
