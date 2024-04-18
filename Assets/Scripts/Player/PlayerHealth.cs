@@ -15,7 +15,6 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     [SerializeField] private AudioManager audioManager;
 
-    public GameOver gameOverScreen;
 
     private Slider healthSlider;
     private int currentHealth;
@@ -44,7 +43,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
 
         if (enemy) {
-            audioManager.PlaySFX(audioManager.dano);
+            // audioManager.PlaySFX(audioManager.dano);
             TakeDamage(1, other.transform);
         }
     }
@@ -78,7 +77,6 @@ public class PlayerHealth : Singleton<PlayerHealth>
             audioManager.StopSFX();
             audioManager.PlaySFX(audioManager.morte);
             audioManager.StopMusic();
-            gameOverScreen.Setup(5, SceneManager.GetActiveScene().buildIndex);
             Debug.Log("Player Death");
         }
     }
@@ -92,7 +90,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
         spriteRenderer.material = redFlashMat;
         yield return new WaitForSeconds(.3f);
         // disable player
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
+        SceneManager.LoadScene(5);
+
 
     }
 

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/fase1v2.unity
     guid: 946a754f8c9bf4242a0b1773f132490b
   - enabled: 1
+    path: Assets/Scenes/cenaFernandinho.unity
+    guid: 81f4e6d682146e543bf9f0c58529d21c
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -23,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/fase1.unity
     guid: d5f790e26a15c0e459598f423eff2710
+  - enabled: 1
+    path: Assets/Scenes/fase2-fernando.unity
+    guid: d69a05e869b477d49b6249b7f0383816
   m_configObjects: {}

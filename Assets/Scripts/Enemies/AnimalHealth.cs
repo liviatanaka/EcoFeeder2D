@@ -57,6 +57,7 @@ public class AnimalHealth : MonoBehaviour
             currentHealth = 0;
             Contador.Instance.SubtractContador();
             Debug.Log("Animal Death");
+            Destroy(gameObject);
 
         }
     }
