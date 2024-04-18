@@ -29,7 +29,21 @@ public class HouseLevel : MonoBehaviour
         {
             MarkLevelComplete(sceneIndex);
             GetComponent<Renderer>().material.color = Color.green;
-            SceneManager.LoadScene(sceneIndex);
+            if (sceneIndex == 0){
+                SceneManager.LoadScene("Scenes/fase1v2 1");
+                Debug.Log("Level 1");
+            } else if (sceneIndex == 1) {
+                SceneManager.LoadScene("Scenes/fase2-fernando");
+                Debug.Log("Level 2");
+            } else if (sceneIndex == 2){
+                SceneManager.LoadScene("Scenes/fase3E");
+                Debug.Log("Level 3");
+            }
+            else {
+                SceneManager.LoadScene(sceneIndex);
+                Debug.Log("Level " + sceneIndex);
+            }
+            
         }
     }
 

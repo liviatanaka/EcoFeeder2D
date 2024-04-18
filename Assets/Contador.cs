@@ -35,6 +35,36 @@ public class Contador : Singleton<Contador>
             Debug.Log("Level Complete!");
             MarkLevelComplete();
             SceneManager.LoadScene("Scenes/cenaFases");  // Nome da cena que lista todas as fases
+
+            if (currentLevelIndex == 2){
+                if (PlayerPrefs.GetInt("Level" + 0 + "Complete", 0) == 1)
+                {
+                    if (PlayerPrefs.GetInt("Level" + 1 + "Complete", 0) == 1)
+                    {
+                        SceneManager.LoadScene("Scenes/Vitoria");
+                    }
+                }
+            }
+            if (currentLevelIndex == 1){
+                if (PlayerPrefs.GetInt("Level" + 0 + "Complete", 0) == 1)
+                {
+                    if (PlayerPrefs.GetInt("Level" + 2 + "Complete", 0) == 1)
+                    {
+                        SceneManager.LoadScene("Scenes/Vitoria");
+                    }
+                }
+            }
+
+            if (currentLevelIndex == 0){
+                if (PlayerPrefs.GetInt("Level" + 1 + "Complete", 0) == 1)
+                {
+                    if (PlayerPrefs.GetInt("Level" + 2 + "Complete", 0) == 1)
+                    {
+                        SceneManager.LoadScene("Scenes/Vitoria");
+                    }
+                }
+            }
+
         }
     }
 
