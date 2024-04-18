@@ -2,43 +2,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Contador : MonoBehaviour
+public class Contador : Singleton<Contador>
 {
     public int currentLevelIndex; // Variável pública para definir o índice da fase atual no editor
     private List<GameObject> animals = new List<GameObject>();
 
+    public int contador = -1;
+
     void Start()
     {
-        LoadAllAnimals();
+        Transform animalsParent = GameObject.FindGameObjectWithTag("Animal").transform;
+        foreach (Transform child in animalsParent)
+        {
+            animals.Add(child.gameObject);
+        }
+
+        contador = animals.Count;
     }
+
+    public void SubtractContador()
+    {
+        contador--;
+        Debug.Log("Contador: " + contador);
+    }
+
 
     void Update()
     {
-        if (animals.Count == 0)
+        
+        if (contador == 0)
         {
+            Debug.Log("Level Complete!");
             MarkLevelComplete();
-            SceneManager.LoadScene("SceneFases");  // Nome da cena que lista todas as fases
+            SceneManager.LoadScene("Scenes/cenaFases");  // Nome da cena que lista todas as fases
         }
     }
 
-    void LoadAllAnimals()
-    {
-        GameObject[] loadedAnimals = Resources.LoadAll<GameObject>("Animals");
-        foreach (GameObject animal in loadedAnimals)
-        {
-            GameObject instance = Instantiate(animal);
-            animals.Add(instance);
-        }
-    }
-
-    public void RemoveAnimal(GameObject animal)
-    {
-        if (animals.Contains(animal))
-        {
-            animals.Remove(animal);
-            Destroy(animal);
-        }
-    }
 
     void MarkLevelComplete()
     {

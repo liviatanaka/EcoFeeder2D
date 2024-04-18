@@ -55,7 +55,9 @@ public class AnimalHealth : MonoBehaviour
     private void CheckIfAnimalDeath() {
         if (currentHealth <= 0) {
             currentHealth = 0;
+            Contador.Instance.SubtractContador();
             Debug.Log("Animal Death");
+
         }
     }
 
