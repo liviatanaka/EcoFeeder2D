@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimalHealth : MonoBehaviour
+public class AnimalHealthTutorial : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private string specialAlimentTag;
-    private AudioClip audioClip;
+    // private AudioClip audioClip;
     private int currentHealth;
     private bool canTakeDamage = true;
     private Knockback knockback;
@@ -17,7 +17,7 @@ public class AnimalHealth : MonoBehaviour
     private void Awake() {
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
-        audioClip = AudioManager.Instance.getClip(gameObject.tag);
+        // audioClip = AudioManager.Instance.getClip(gameObject.tag);
     }
 
     private void Start() {
@@ -28,12 +28,10 @@ public class AnimalHealth : MonoBehaviour
         Projectile alimento = other.gameObject.GetComponent<Projectile>();
 
         // play the sound
-        AudioManager.Instance.PlaySFX(audioClip);
+        // AudioManager.Instance.PlaySFX(audioClip);
         if (alimento) {
             if (other.tag == specialAlimentTag) {
                 TakeDamage(3, other.transform);
-            } else {
-                TakeDamage(1, other.transform);
             }
             // destroy the projectile
             Destroy(other.gameObject);
@@ -54,7 +52,7 @@ public class AnimalHealth : MonoBehaviour
         currentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());
         CheckIfAnimalDeath();
-        AudioManager.Instance.PlaySFX(audioClip);
+        // AudioManager.Instance.PlaySFX(audioClip);
     }
     
 
@@ -75,7 +73,7 @@ public class AnimalHealth : MonoBehaviour
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
          // play the sound
-        AudioManager.Instance.PlaySFX(audioClip);
+        // AudioManager.Instance.PlaySFX(audioClip);
     }
 
 }
