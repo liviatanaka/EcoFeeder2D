@@ -190,7 +190,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  agent: {fileID: 0}
+  agent: {fileID: 3558303168184813483}
 --- !u!114 &6937059931760574524
 MonoBehaviour:
   m_ObjectHideFlags: 0
