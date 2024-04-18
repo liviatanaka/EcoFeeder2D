@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private float moveSpeed = 1f;
@@ -13,6 +14,7 @@ public class PlayerController : Singleton<PlayerController>
     private Knockback knockback;
     private SpriteRenderer mySpriteRender;
 
+    // private AudioManager audioManager;
 
     private void Awake() {
         base.Awake();
@@ -23,7 +25,7 @@ public class PlayerController : Singleton<PlayerController>
         myAnimator = GetComponent<Animator>(); // animação do personagem
         mySpriteRender = GetComponent<SpriteRenderer>(); // renderiza o sprite do personagem
         knockback = GetComponent<Knockback>();
-
+        // audioManager = GameObject.Find("Audio").GetComponent<AudioManager>();
     }
 
     
