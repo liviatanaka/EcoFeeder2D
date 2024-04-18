@@ -8,6 +8,7 @@ TagManager:
   - Milho
   - Peixe
   - Beterraba
+  - Audio
   layers:
   - Default
   - TransparentFX

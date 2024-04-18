@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
@@ -12,6 +13,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private Material redFlashMat;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private AudioManager audioManager;
+
+    public GameOver gameOverScreen;
 
     private Slider healthSlider;
     private int currentHealth;
@@ -19,12 +23,15 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private Knockback knockback;
     private Flash flash;
 
+
     protected override void Awake() {
         base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
+        // audioManager = GameObject.Find("Audio").GetComponent<AudioManager>();
+
     }
 
     private void Start() {
@@ -37,6 +44,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
 
         if (enemy) {
+            audioManager.PlaySFX(audioManager.dano);
             TakeDamage(1, other.transform);
         }
     }
@@ -67,7 +75,10 @@ public class PlayerHealth : Singleton<PlayerHealth>
             canTakeDamage = false;
             spriteRenderer.material = redFlashMat;
             StartCoroutine(DeathRoutine());
-
+            audioManager.StopSFX();
+            audioManager.PlaySFX(audioManager.morte);
+            audioManager.StopMusic();
+            gameOverScreen.Setup(5, SceneManager.GetActiveScene().buildIndex);
             Debug.Log("Player Death");
         }
     }
