@@ -72,7 +72,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     private void Attack() {
         if (attackButtonDown && !isAttacking) {
-            audioManager.PlaySFX(audioManager.flecha);
+            // audioManager.PlaySFX(audioManager.flecha); --- linha que deu pau
             AttackCooldown();
             (CurrentActiveWeapon as IWeapon).Attack();
         }
