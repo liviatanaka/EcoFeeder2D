@@ -44,7 +44,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
 
         if (enemy) {
-            audioManager.PlaySFX(audioManager.dano);
+            // audioManager.PlaySFX(audioManager.dano);
             TakeDamage(1, other.transform);
         }
     }
