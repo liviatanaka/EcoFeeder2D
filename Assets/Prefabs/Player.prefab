@@ -275,3 +275,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: 76964a66dd24d674698913b31984b443, type: 2}
   restoreDefaultMatTime: 0.2
+
