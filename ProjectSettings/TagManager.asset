@@ -11,6 +11,11 @@ TagManager:
   - Audio
   - Mel
   - Maca
+  - Abelha
+  - Galinha
+  - Pato
+  - Porco
+  - Rino
   layers:
   - Default
   - TransparentFX

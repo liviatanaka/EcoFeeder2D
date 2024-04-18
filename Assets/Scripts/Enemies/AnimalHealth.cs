@@ -8,7 +8,7 @@ public class AnimalHealth : MonoBehaviour
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private string specialAlimentTag;
-    private AudioSource audioSource;
+    private AudioClip audioClip;
     private int currentHealth;
     private bool canTakeDamage = true;
     private Knockback knockback;
@@ -17,8 +17,7 @@ public class AnimalHealth : MonoBehaviour
     private void Awake() {
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
-
-        audioSource = GetComponent<AudioSource>();
+        audioClip = AudioManager.Instance.getClip(gameObject.tag);
     }
 
     private void Start() {
@@ -28,8 +27,8 @@ public class AnimalHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         Projectile alimento = other.gameObject.GetComponent<Projectile>();
 
-         // play the sound
-        audioSource.Play();
+        // play the sound
+        AudioManager.Instance.PlaySFX(audioClip);
         if (alimento) {
             if (other.tag == specialAlimentTag) {
                 TakeDamage(3, other.transform);
@@ -54,14 +53,13 @@ public class AnimalHealth : MonoBehaviour
         currentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());
         CheckIfAnimalDeath();
-         // play the sound
-        audioSource.Play();
+        AudioManager.Instance.PlaySFX(audioClip);
     }
     
 
     private void CheckIfAnimalDeath() {
         if (currentHealth <= 0) {
-            audioSource.Play();
+            // audioSource.Play();
             currentHealth = 0;
             Contador.Instance.SubtractContador();
             Debug.Log("Animal Death");
@@ -77,7 +75,7 @@ public class AnimalHealth : MonoBehaviour
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
          // play the sound
-        audioSource.Play();
+        AudioManager.Instance.PlaySFX(audioClip);
     }
 
 }

@@ -13,8 +13,6 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private Material redFlashMat;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private AudioManager audioManager;
-
 
     private Slider healthSlider;
     private int currentHealth;
@@ -29,7 +27,6 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
-        // audioManager = GameObject.Find("Audio").GetComponent<AudioManager>();
 
     }
 
@@ -43,7 +40,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
 
         if (enemy) {
-            // audioManager.PlaySFX(audioManager.dano);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.dano);
             TakeDamage(1, other.transform);
         }
     }
@@ -51,6 +48,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     public void HealPlayer() {
         if (currentHealth < maxHealth) {
             currentHealth += 1;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.coracao);
             UpdateHealthSlider();
         }
     }
@@ -74,9 +72,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
             canTakeDamage = false;
             spriteRenderer.material = redFlashMat;
             StartCoroutine(DeathRoutine());
-            audioManager.StopSFX();
-            audioManager.PlaySFX(audioManager.morte);
-            audioManager.StopMusic();
+            AudioManager.Instance.StopSFX();
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.morte);
+            AudioManager.Instance.StopMusic();
             Debug.Log("Player Death");
         }
     }

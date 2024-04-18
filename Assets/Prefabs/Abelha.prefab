@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 6755746046673589666}
   m_Layer: 0
   m_Name: Abelha
-  m_TagString: Untagged
+  m_TagString: Abelha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
