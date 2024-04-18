@@ -11,9 +11,6 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     private bool attackButtonDown, isAttacking = false;
 
-    [SerializeField] private AudioManager audioManager;
-
-
 
     protected override void Awake() {
         base.Awake();
@@ -72,7 +69,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     private void Attack() {
         if (attackButtonDown && !isAttacking) {
-            // audioManager.PlaySFX(audioManager.flecha); --- linha que deu pau
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.flecha);
             AttackCooldown();
             (CurrentActiveWeapon as IWeapon).Attack();
         }

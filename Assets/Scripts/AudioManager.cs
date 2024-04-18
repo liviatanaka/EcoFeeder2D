@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     [Header("--------- Audio Sources --------")]
     [SerializeField] AudioSource musicSource;
@@ -36,8 +37,6 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlaySFX(AudioClip clip){
-
-
         SFXSource.PlayOneShot(clip);
     }
 
@@ -46,4 +45,23 @@ public class AudioManager : MonoBehaviour
         SFXSource.Play();
 
     }
+
+    public AudioClip getClip(String objectTag){
+        switch(objectTag){
+            case "Abelha":
+                return abelha;
+            case "Rino":
+                return rinoceronte;
+            case "Galinha":
+                return galinha;
+            case "Porco":
+                return porco;
+            case "Pato":
+                return pato;
+            default:
+                return null;
+        }
+
+    }
+
 }

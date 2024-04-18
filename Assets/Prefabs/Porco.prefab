@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 7504465034811799664}
   m_Layer: 0
   m_Name: Porco
-  m_TagString: Untagged
+  m_TagString: Porco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
