@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float roamChangeDirFloat = 2f;
+    [SerializeField] private float chaseSpeed = 5f;
+    [SerializeField] private float distanceToGoToPlayer = 15f;
 
     private enum State {
         Roaming,
@@ -36,7 +38,7 @@ public class EnemyAI : MonoBehaviour
     private void Update() {
         Vector3 playerPos = PlayerController.Instance.transform.position;
 
-        if (Vector3.Distance(transform.position, playerPos) < 9f) {
+        if (Vector3.Distance(transform.position, playerPos) < distanceToGoToPlayer) {
             state = State.Chasing;
             agent.isStopped = false;
             agent.SetDestination(playerTransform.position);
